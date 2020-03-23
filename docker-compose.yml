@@ -11,6 +11,7 @@ services:
       - "3000:3000"
     volumes:
       - ${PROMETHEUS_ROOT}/configs/grafana.ini:/etc/grafana/grafana.ini
+      - ${PROMETHEUS_ROOT}/configs/provisioning:/etc/grafana/provisioning
       - ${PROMETHEUS_ROOT}/data/grafana:/var/lib/grafana
 
   prometheus:

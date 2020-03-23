@@ -6,7 +6,16 @@
 
 ### Install
 ```bash
-curl -fsSL https://raw.githubusercontent.com/prahaladramji/synology-prometheus/master/setup | sudo sh
+curl -fsSL https://raw.githubusercontent.com/tgunsch/synology-prometheus/master/setup | sudo sh
+```
+
+### Start and stop
+```bash
+# Start
+sudo /volume1/docker/prometheus/start.sh
+
+# Stop
+sudo /volume1/docker/prometheus/stop.sh
 ```
 
 #### Endpoints 
