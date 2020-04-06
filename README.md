@@ -6,7 +6,14 @@
 
 ### Install
 ```bash
-curl -fsSL https://raw.githubusercontent.com/tgunsch/synology-prometheus/master/setup | sudo sh
+# Download latest version archive
+cd /volume1/docker/prometheus
+version=$( curl --silent "https://api.github.com/repos/tgunsch/synology-prometheus/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")' )
+curl -fsSL https://github.com/tgunsch/synology-prometheus/archive/${version}.tar.gz -o archive.tgz
+tar  -xz  -C ${PROMETHEUS_ROOT}  --strip-components=1 -f archive.tgz
+
+# install
+sudo setup.sh
 ```
 
 ### Start and stop
